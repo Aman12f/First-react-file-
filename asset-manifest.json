@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/textutils1/static/css/main.e1b4f669.css",
-    "main.js": "/textutils1/static/js/main.f1684a6d.js",
-    "static/js/787.baf5f02f.chunk.js": "/textutils1/static/js/787.baf5f02f.chunk.js",
-    "index.html": "/textutils1/index.html",
-    "main.e1b4f669.css.map": "/textutils1/static/css/main.e1b4f669.css.map",
-    "main.f1684a6d.js.map": "/textutils1/static/js/main.f1684a6d.js.map",
-    "787.baf5f02f.chunk.js.map": "/textutils1/static/js/787.baf5f02f.chunk.js.map"
+    "main.css": "/First-react-file-/static/css/main.e1b4f669.css",
+    "main.js": "/First-react-file-/static/js/main.ce5fdc75.js",
+    "static/js/787.baf5f02f.chunk.js": "/First-react-file-/static/js/787.baf5f02f.chunk.js",
+    "index.html": "/First-react-file-/index.html",
+    "main.e1b4f669.css.map": "/First-react-file-/static/css/main.e1b4f669.css.map",
+    "main.ce5fdc75.js.map": "/First-react-file-/static/js/main.ce5fdc75.js.map",
+    "787.baf5f02f.chunk.js.map": "/First-react-file-/static/js/787.baf5f02f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e1b4f669.css",
-    "static/js/main.f1684a6d.js"
+    "static/js/main.ce5fdc75.js"
   ]
 }
