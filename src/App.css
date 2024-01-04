@@ -1,0 +1,15 @@
+.active{
+  color: black;
+}
+.home {
+  color: green;
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+}
+li{
+  text-decoration: none;
+  list-style: none;
+}
