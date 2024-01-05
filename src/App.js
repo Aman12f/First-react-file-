@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import Navbar3 from './components/Navbar3';
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import About1 from './components/About1';
 // import Nav from './components/Nav';
 // import Address from './components/Address';
 // import Contact from './components/Contact';
@@ -47,8 +48,8 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import { useState } from 'react';
 // import Navbar3 from './components/Navbar3';
-// import Alert from './components/Alert';
-// import About from './components/About';
+import Alert from './components/Alert';
+import About from './components/About';
 
 // import { Switch, Route } from 'react-router-dom';
 // import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -61,67 +62,96 @@ import { useState } from 'react';
 // // import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
-// function App() { 
-//         //  video - 10 + 12 + 13
-//         // + 
-//         // ----------------------REACT ROUTING---------------------------
-//         const toggleMode =()=>{
-//   if(mode === 'light')
-//   {
-//     setMode('dark');
-//     document.body.style.backgroundColor = '#0d143a';
-//     showAlert("Dark Mode has been Enabled","success");
-//     document.title = 'TextUtils - Dark Mode';
-//     setInterval(() => {
-//       document.title = 'TextUtils - You';
-      
-//     }, 100);
-//     setInterval(() => {
-//       document.title = 'TextUtils - Fuck';
-      
-//     }, 110);
-//   }
-//   else{
-//     setMode('light');
-//     document.body.style.backgroundColor = 'white';
-//     showAlert("Light Mode has been Enabled","success");
-//     document.title = 'TextUtils - Light Mode';
-//   }
-//   }
+function App() { 
+        //  video - 10 + 12 + 13
+        // + 
+        // ----------------------REACT ROUTING---------------------------
+        const toggleMode =()=>{
+  if(mode === 'light')
+  {
+    setMode('dark');
+    document.body.style.backgroundColor = '#0d143a';
+    showAlert("Dark Mode has been Enabled","success");
+    document.title = 'TextUtils - Dark Mode';
+    setButtonStyle();
 
-//   const showAlert =(message,type)=>{
-//         setAlert({
-//           msg:message,
-//           type:type
-//         })
-//         setTimeout(() => {
-//           setAlert(null);
-//         }, 2000);
-//   }
-//   const [mode,setMode] = useState('light');
-//   const [alert,setAlert] = useState(null);
-//   return (
-//       <>
-  
-//     <BrowserRouter>
-//     <Routes>
-//       <Route path="/" element={<Navbar title="TextUtils" about_us = "About_US" mode ={mode} toggleMode = {toggleMode}/>}>
-//       <Route path="/textform" element={<TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />}></Route>
-//       </Route>
-//     </Routes>
-//     </BrowserRouter>
-//     </>
-//     );
-//   }
+    // -----------NOTE : TITLE CHAMAKNE KE LIYE --------------------
+    // setInterval(() => {
+    //   document.title = 'TextUtils - You';
+      
+    // }, 100);
+    // setInterval(() => {
+    //   document.title = 'TextUtils - Fuck';
+      
+    // }, 110);
+  }
+  else{
+    setMode('light');
+    document.body.style.backgroundColor = 'white';
+    showAlert("Light Mode has been Enabled","success");
+    document.title = 'TextUtils - Light Mode';
+    setButtonStyle();
+  }
+  }
 
-function App()
-{
-  return (
-    <>
-    <Navbar3></Navbar3>
-    </>
-  );
+  const showAlert =(message,type)=>{
+        setAlert({
+          msg:message,
+          type:type
+        })
+        setTimeout(() => {
+          setAlert(null);
+        }, 2000);
+  }
+  const [mode,setMode] = useState('light');
+  const [alert,setAlert] = useState(null);
+
+  const [mystyle,setMyStyle] = useState({
+     color:'black',
+     backgroundColor:'white'
+
+  })
+
+ const setButtonStyle=()=>{
+  if(mystyle.color === 'white'){
+    setMyStyle({
+        color:'black',
+        backgroundColor:'white'
+    })
 }
+else{
+    setMyStyle({
+        color:'white',
+        backgroundColor:'black'
+    })
+}
+ }
+  return (
+      <>
+  
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Navbar title="TextUtils" about_us = "About_US" mode ={mode} toggleMode = {toggleMode}/>}>
+      {/* <Route path="/" element={<Alert alert={alert}></Alert>}></Route> */}
+      <Route path="/textform" element={<TextForm showAlert={showAlert} heading="Try Textutils - Word Counter,Characher, Remover Extra Spaces" mode={mode} />}></Route>
+      <Route path ="/about" element={<About1 mode = {mode} mystyle = {mystyle}></About1>}></Route>
+      </Route>
+    </Routes>
+    </BrowserRouter>
+
+    </>
+    );
+  }
+
+// function App()
+// {
+      // Deploying React APP on github pages 
+//   return (
+//     <>
+//     <Navbar3></Navbar3>
+//     </>
+//   );
+// }
 
 
 // ---------------------------------PrtcVideo12----------------------------------------------

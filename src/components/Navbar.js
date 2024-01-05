@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+// import About1 from './About1'
 
 
 export default function Navbar(props) {
@@ -27,8 +28,11 @@ export default function Navbar(props) {
           <li className="nav-item">
             <a className="nav-link" href="/">{props.about_us}</a>
          </li>
-          <li className="nav-item">
+          <li className="nav-item m-2">
            <NavLink to="/textform">TextForm</NavLink>
+         </li>
+         <li className='nav-item m-2'>
+          <NavLink to="/about">About1</NavLink>
          </li>
         </ul>
         {/* <form className="d-flex" role="search">
