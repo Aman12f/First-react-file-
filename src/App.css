@@ -18,13 +18,23 @@
     flex-direction: column;
     width: 40vw;
 }
-
-/* ul{
-  text-decoration: none;
-  list-style: none;
-  font-style: none;
+.accordion-button::after {
+  filter: invert(1);
 }
-li{
-  list-style: none;
-  font-style: none;
-} */
+ul{
+  list-style-type: none;
+}
+li>a{
+  text-decoration: none;
+  color: black;
+}
+.btn-go{
+  border: 2px solid black;
+  height: 28px;
+  padding: 0px;
+  z-index: 1;
+  width: 58px;
+  background-color: red;
+  color: white;
+  border-radius:5px;
+}
