@@ -41,14 +41,35 @@ export default function Navbar(props) {
         </form> */}
 
       </div>
+     
+      <div className={`form-check form-switch`}>
+  <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.funcBlue}/>
+  <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Blue Mode</label>
+</div>
+      <div className={`form-check form-switch`}>
+  <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.funcGreen}/>
+  <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Green Mode</label>
+</div>
+      <div className={`form-check form-switch`}>
+  <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.funcRed}/>
+  <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Red Mode</label>
+</div>
+
     <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
   <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={props.toggleMode} />
-  <label className="form-check-label" htmlforor="flexSwitchCheckDefault">Enable Dark Mode</label>
+  <label className="form-check-label" htmlforor="flexSwitchCheckDefault">Toggle Mode</label>
 </div>
     </div>
 
 
   </nav>
+  <div className="d-flex mt-1">
+    <div className="bg-primary rounded mx-2" style={{height:'25px',width:'25px',cursor:'pointer',border:'1px solid black',zIndex:'10'}} onClick={()=>props.toggleMode2('primary')}></div>
+    <div className="bg-danger rounded mx-2" style={{height:'25px',width:'25px',cursor:'pointer',border:'1px solid black',zIndex:'10'}} onClick={()=>props.toggleMode2('danger')}></div>
+    <div className="bg-success rounded mx-2" style={{height:'25px',width:'25px',cursor:'pointer',border:'1px solid black',zIndex:'10'}} onClick={()=>props.toggleMode2('success')}></div>
+    <div className="bg-warning rounded mx-2" style={{height:'25px',width:'25px',cursor:'pointer',border:'1px solid black',zIndex:'10'}} onClick={()=>props.toggleMode2('warning')}></div>
+    {/* <div className="rounded mx-2" style={{height:'25px',width:'25px',cursor:'pointer',backgroundColor:'#0d143a'}} onClick={()=>props.toggleMode2('#0d143a')}></div> */}
+  </div>
   <div className="button">
     <button onClick={goHome}>Go to Home Page</button>
   </div>

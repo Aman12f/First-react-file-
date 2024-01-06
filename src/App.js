@@ -126,12 +126,113 @@ else{
     })
 }
  }
+ 
+ const funcBlue=()=>{
+  if(mode1 !=='blue'){
+    setMode1('blue');
+    setMode('dark');
+    setButtonStyle();
+    // document.body.style.backgroundColor = '#0d143a';
+    document.body.style.backgroundColor = '#2d2d62';
+  }
+  else{
+    setMode1('light');
+    setMode('light');
+    setButtonStyle();
+    document.body.style.backgroundColor = 'white';
+  }
+ }
+ const funcGreen=()=>{
+  if(mode1 !=='green'){
+    setMode1('green');
+    setMode('dark');
+    setButtonStyle();
+    // document.body.style.backgroundColor = '#0d143a';
+    document.body.style.backgroundColor = '#2d5c2d';
+  }
+  else{
+    setMode1('light');
+    setMode('light');
+    setButtonStyle();
+    document.body.style.backgroundColor = 'white';
+  }
+ }
+ const funcRed=()=>{
+  if(mode1 !=='red'){
+    setMode1('red');
+    setMode('dark');
+    setRedButtonStyle();
+    // document.body.style.backgroundColor = '#0d143a';
+    document.body.style.backgroundColor = '#6a3f3f';
+  }
+  else{
+    setMode1('light');
+    setMode('light');
+    setRedButtonStyle();
+    document.body.style.backgroundColor = 'white';
+  }
+ }
+ const setRedButtonStyle=()=>{
+    if(mode1==='light'){
+      setMyStyle({
+        color:'black',
+        backgroundColor:'#7c4343'
+      })
+    }
+    else{
+      setMyStyle({
+        color:'black',
+        backgroundColor:'white'
+      })
+    }
+    //   if(mystyle.color === 'white'){
+    //     setMyStyle({
+    //         color:'black',
+    //         backgroundColor:'white'
+    //     })
+    // }
+    // else{
+    //     setMyStyle({
+    //         color:'white',
+    //         backgroundColor:'red'
+    //     })
+    // }
+ }
+ const [mode1,setMode1] = useState('light');
+//  const [mystyle1,setMyStyle1] = useState('light');
+const [mode2,setMode2] = useState('light');
+const toggleMode2 =(cls)=>{
+  removeBodyClasses();
+  document.body.classList.add('bg-'+cls)
+  // if(mode === 'light')
+  // {
+  //   setMode('dark');
+  //   document.body.style.backgroundColor = '#0d143a';
+  //   showAlert("Dark Mode has been Enabled","success");
+  //   document.title = 'TextUtils - Dark Mode';
+  //   setButtonStyle();
+  // }
+  // else{
+  //   setMode('light');
+  //   document.body.style.backgroundColor = 'white';
+  //   showAlert("Light Mode has been Enabled","success");
+  //   document.title = 'TextUtils - Light Mode';
+  //   setButtonStyle();
+  // }
+  }
+  const removeBodyClasses=()=>{
+    document.body.classList.remove('bg-light');
+    document.body.classList.remove('bg-dark');
+    document.body.classList.remove('bg-success');
+    document.body.classList.remove('bg-danger');
+    document.body.classList.remove('bg-warning');
+  }
   return (
       <>
   
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Navbar title="TextUtils" about_us = "About_US" mode ={mode} toggleMode = {toggleMode}/>}>
+      <Route path="/" element={<Navbar title="TextUtils" about_us = "About_US" mode ={mode} toggleMode = {toggleMode} funcRed={funcRed} funcGreen={funcGreen} funcBlue={funcBlue} toggleMode2={toggleMode2}/>}>
       {/* <Route path="/" element={<Alert alert={alert}></Alert>}></Route> */}
       <Route path="/textform" element={<TextForm showAlert={showAlert} heading="Try Textutils - Word Counter,Characher, Remover Extra Spaces" mode={mode} />}></Route>
       <Route path ="/about" element={<About1 mode = {mode} mystyle = {mystyle}></About1>}></Route>
